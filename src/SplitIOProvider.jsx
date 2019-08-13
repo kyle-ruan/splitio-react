@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { SplitIOContext } from './SplitIOContext';
-import { useSplitClient } from './hooks/use-split-client';
+import { useInitSplitClient } from './hooks/use-init-split-client';
 
 /**
  * @param {string} splitKey                 internal user id, or the organisation id that the user belongs to
@@ -15,7 +15,7 @@ const SplitIOProvider = ({
   attributes,
   children
 }) => {
-  const client = useSplitClient({
+  const client = useInitSplitClient({
     key: splitKey,
     authorizationKey
   });
