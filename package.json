@@ -1,6 +1,6 @@
 {
   "name": "splitio-react",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "react split-io wrapper",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -19,13 +19,11 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
-    "@splitsoftware/splitio": "^10.8.2",
     "babel-eslint": "^10.0.2",
     "prettier-eslint-cli": "^5.0.0",
     "react": "^16.8.1"
   },
   "peerDependencies": {
-    "@splitsoftware/splitio": "^10.8.2",
     "react": "^16.8.1"
   }
 }

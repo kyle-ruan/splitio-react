@@ -6,7 +6,6 @@ import { useSplitClient } from './hooks/use-split-client';
  * @param {string} splitKey                 internal user id, or the organisation id that the user belongs to
  * @param {string} authorizationKey         your split api key
  * @param {string[]} splits                 split names
- * @param {Object} [splitFactory]           [optional] splitFactory instance, required if using cdn, which will expose splitio globally
  * @param {Object} attributes               user attributes to determine split treatment value
  */
 const SplitIOProvider = ({
@@ -14,13 +13,11 @@ const SplitIOProvider = ({
   authorizationKey,
   splits,
   attributes,
-  splitFactory,
   children
 }) => {
   const client = useSplitClient({
     key: splitKey,
-    authorizationKey,
-    splitFactory
+    authorizationKey
   });
   const [treatments, setTreatments] = useState({});
 

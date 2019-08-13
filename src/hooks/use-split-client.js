@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react';
 
 const useSplitClient = ({
   key,
-  authorizationKey,
-  splitFactory
+  authorizationKey
 }) => {
   const [splitClient, setSplitClient] = useState();
 
@@ -13,12 +12,8 @@ const useSplitClient = ({
         return;
       }
 
-      if (!splitFactory) {
-        splitFactory = require('@splitsoftware/splitio').SplitFactory;
-      }
-
       // eslint-disable-next-line no-undef
-      const client = splitFactory({
+      const client = splitio({
         core: {
           authorizationKey,
           key
