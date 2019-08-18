@@ -1,7 +1,7 @@
 # splitio-react
 
 ### Dependency
-This package assumes you would import splitio use CDN (recommended by docs https://help.split.io/hc/en-us/articles/360020448791-JavaScript-SDK).
+This package assumes you would import splitio use CDN (recommended in docs https://help.split.io/hc/en-us/articles/360020448791-JavaScript-SDK).
 ```javascript
 <script src="//cdn.split.io/sdk/split-10.8.2.min.js"></script>
 ```
