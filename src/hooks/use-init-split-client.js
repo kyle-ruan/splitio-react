@@ -1,6 +1,14 @@
 import { useState, useEffect } from 'react';
 
-const useInitSplitClient = ({ key, authorizationKey }) => {
+const useInitSplitClient = ({
+  key,
+  authorizationKey,
+  trafficType,
+  labelsEnabled = true,
+  startup,
+  scheduler,
+  storage
+}) => {
   const [splitClient, setSplitClient] = useState();
 
   useEffect(() => {
@@ -13,8 +21,13 @@ const useInitSplitClient = ({ key, authorizationKey }) => {
       const client = splitio({
         core: {
           authorizationKey,
-          key
-        }
+          key,
+          trafficType,
+          labelsEnabled
+        },
+        startup,
+        scheduler,
+        storage
       }).client();
 
       client.on(client.Event.SDK_READY, () => {

@@ -11,15 +11,23 @@ import { useInitSplitClient } from './hooks/use-init-split-client';
 const SplitIOProvider = ({
   splitKey,
   authorizationKey,
+  trafficType,
+  labelsEnabled = true,
   splits,
   attributes,
-  children
+  children,
+  ...options
 }) => {
   const client = useInitSplitClient({
     key: splitKey,
-    authorizationKey
+    authorizationKey,
+    trafficType,
+    labelsEnabled,
+    ...options
   });
   const [treatments, setTreatments] = useState({});
+
+  const stringifedAttributes = JSON.stringify(attributes);
 
   useEffect(() => {
     if (!client) {
@@ -31,7 +39,7 @@ const SplitIOProvider = ({
       attributes
     );
     setTreatments(values);
-  }, [JSON.stringify(attributes), splitKey, client]);
+  }, [stringifedAttributes, splitKey, client]);
 
   return (
     <SplitIOContext.Provider value={{ treatments, client }}>
