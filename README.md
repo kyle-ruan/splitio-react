@@ -32,14 +32,14 @@ const App = () => (
 import { useSplitTreatment } from 'splitio-react';
 
 const SplitView = () => {
-  const on = useSplitTreatment('SPLIT_NAME');
+  const treatmentValue = useSplitTreatment('SPLIT_NAME');
   const client = useSplitClient();
 
   useEffect(() => {
-    if (on) {
+    if (treatmentValue === 'on') {
       client.track('traffic type', 'event');
     }
-  }, [on]);
-  return on ? <div>ON</div> : <div>OFF</div>
+  }, [treatmentValue]);
+  return treatmentValue === 'on' ? <div>On</div> : <div>Off</div>
 };
 ```
