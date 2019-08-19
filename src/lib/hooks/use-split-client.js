@@ -1,4 +1,4 @@
-import { get } from 'lodash';
+import get from 'lodash/get';
 import { useContext } from 'react';
 import { SplitIOContext } from '../SplitIOContext';
 
