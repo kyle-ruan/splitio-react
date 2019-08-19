@@ -8,8 +8,8 @@ const useSplitTreatment = treatment => {
 
   useEffect(() => {
     const treatmentValue =
-      get(splitContext, `treatments.${treatment}`) || 'off';
-    setValue(treatmentValue === 'on');
+      get(splitContext, `treatments.${treatment}`)
+    setValue(treatmentValue);
   }, [treatment, splitContext]);
 
   return value;
