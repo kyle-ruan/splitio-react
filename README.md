@@ -6,6 +6,9 @@ This package assumes you would import splitio use CDN (recommended in docs https
 <script src="//cdn.split.io/sdk/split-10.8.2.min.js"></script>
 ```
 
+### Install
+`yarn add splitio-react`
+
 ### Config
 ```javascript
 import { SplitIOProvider } from 'splitio-react';
