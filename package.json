@@ -8,11 +8,29 @@
   "author": "Kyle Ruan",
   "license": "MIT",
   "scripts": {
+    "start": "react-scripts start",
+    "clean": "rm -rf ./lib ./es ./node_modules",
+    "prebuild": "yarn run clean && yarn",
     "build": "yarn build:commonjs && yarn build:es",
-    "build:commonjs": "BABEL_ENV=commonjs babel src --out-dir lib",
-    "build:es": "BABEL_ENV=es babel src --out-dir es",
+    "build:commonjs": "BABEL_ENV=commonjs babel src/lib --out-dir lib",
+    "build:es": "BABEL_ENV=es babel src/lib --out-dir es",
     "format": "prettier-eslint --write 'src/**/*.js'",
     "prepublishOnly": "rm -rf es lib && yarn build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -23,9 +41,13 @@
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.2",
     "prettier-eslint-cli": "^5.0.0",
-    "react": "^16.8.1"
+    "react": "^16.8.1",
+    "react-scripts": "3.1.1"
   },
   "peerDependencies": {
     "react": "^16.8.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
   }
 }
