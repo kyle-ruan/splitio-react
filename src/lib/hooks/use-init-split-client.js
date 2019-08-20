@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { useState, useEffect } from 'react';
 
 const useInitSplitClient = ({
@@ -14,10 +13,11 @@ const useInitSplitClient = ({
 
   useEffect(() => {
     const initSplitClient = async () => {
-      if (!key || !splitio) {
+      if (!key || typeof window === undefined) {
         return;
       }
 
+      // eslint-disable-next-line no-undef
       const client = splitio({
         core: {
           authorizationKey,
@@ -36,7 +36,7 @@ const useInitSplitClient = ({
     };
 
     initSplitClient();
-  }, [key, splitio, authorizationKey, trafficType]);
+  }, [key]);
 
   return splitClient;
 };
