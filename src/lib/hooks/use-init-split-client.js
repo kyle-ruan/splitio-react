@@ -11,7 +11,6 @@ const useInitSplitClient = ({
   storage
 }) => {
   const [splitClient, setSplitClient] = useState();
-  const hasSplitLoaded = !!splitio;
 
   useEffect(() => {
     const initSplitClient = async () => {
@@ -37,7 +36,7 @@ const useInitSplitClient = ({
     };
 
     initSplitClient();
-  }, [key, hasSplitLoaded, authorizationKey, trafficType]);
+  }, [key, splitio, authorizationKey, trafficType]);
 
   return splitClient;
 };
