@@ -1,6 +1,6 @@
 {
   "name": "splitio-react",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "react split-io wrapper library",
   "repository": "https://github.com/kyle-ruan/splitio-react.git",
   "main": "lib/index.js",
