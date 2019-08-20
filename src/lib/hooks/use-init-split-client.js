@@ -13,7 +13,7 @@ const useInitSplitClient = ({
 
   useEffect(() => {
     const initSplitClient = async () => {
-      if (!key) {
+      if (!key || typeof window === undefined) {
         return;
       }
 
